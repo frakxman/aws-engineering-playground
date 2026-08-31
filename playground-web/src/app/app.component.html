@@ -15,16 +15,25 @@
       <div class="nav-section">
         <span class="nav-label">PLAYGROUND</span>
 
-        <a class="nav-item active" href="#">
+        <a
+          class="nav-item"
+          routerLink="/overview"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           <span class="nav-icon">⌂</span>
           <span>Overview</span>
         </a>
 
-        <a class="nav-item" href="#">
+        <a
+          class="nav-item"
+          routerLink="/services"
+          routerLinkActive="active"
+        >
           <span class="nav-icon">▣</span>
           <span>Services</span>
         </a>
-
+        
         <a class="nav-item" href="#">
           <span class="nav-icon">◇</span>
           <span>Architecture</span>
@@ -67,7 +76,11 @@
       </div>
 
       <div class="topbar-actions">
-        <button class="topbar-button" type="button" aria-label="Open command palette">
+        <button
+          class="topbar-button"
+          type="button"
+          aria-label="Open command palette"
+        >
           <span>⌘</span>
           <span>K</span>
         </button>
@@ -82,122 +95,6 @@
       </div>
     </header>
 
-    <main class="workspace">
-      <section class="hero">
-        <div>
-          <span class="eyebrow">AWS ENGINEERING</span>
-
-          <h1>
-            Cloud engineering,
-            <span>explored.</span>
-          </h1>
-
-          <p>
-            A practical playground for understanding AWS architecture,
-            services, patterns, and engineering decisions.
-          </p>
-        </div>
-
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          <span>Environment ready</span>
-        </div>
-      </section>
-
-      <section class="glass-grid" aria-label="Playground modules">
-        <article class="glass-card glass-card-featured">
-          <div class="card-header">
-            <span class="card-kicker">01</span>
-            <span class="card-badge">CORE</span>
-          </div>
-
-          <h2>Services</h2>
-
-          <p>
-            Explore AWS services through focused engineering concepts,
-            examples, and implementation notes.
-          </p>
-
-          <button class="card-action" type="button">
-            Explore services
-            <span>→</span>
-          </button>
-        </article>
-
-        <article class="glass-card">
-          <div class="card-header">
-            <span class="card-kicker">02</span>
-            <span class="card-badge">DESIGN</span>
-          </div>
-
-          <h2>Architecture</h2>
-
-          <p>
-            Understand how cloud components connect through visual
-            architecture diagrams and trade-offs.
-          </p>
-
-          <button class="card-action" type="button">
-            View architectures
-            <span>→</span>
-          </button>
-        </article>
-
-        <article class="glass-card">
-          <div class="card-header">
-            <span class="card-kicker">03</span>
-            <span class="card-badge">HANDS-ON</span>
-          </div>
-
-          <h2>Labs</h2>
-
-          <p>
-            Build small, focused experiments around real AWS engineering
-            problems.
-          </p>
-
-          <button class="card-action" type="button">
-            Open labs
-            <span>→</span>
-          </button>
-        </article>
-      </section>
-
-      <section class="glass-panel">
-        <div class="panel-heading">
-          <div>
-            <span class="eyebrow">PLAYGROUND</span>
-            <h2>Foundation</h2>
-          </div>
-
-          <span class="panel-status">
-            <span class="status-dot"></span>
-            Operational
-          </span>
-        </div>
-
-        <div class="panel-content">
-          <div class="metric">
-            <span class="metric-label">Modules</span>
-            <strong>03</strong>
-            <span>Core playground areas</span>
-          </div>
-
-          <div class="metric">
-            <span class="metric-label">Version</span>
-            <strong>0.1</strong>
-            <span>Initial foundation</span>
-          </div>
-
-          <div class="metric">
-            <span class="metric-label">Status</span>
-            <strong>READY</strong>
-            <span>Interface available</span>
-          </div>
-        </div>
-      </section>
-    </main>
+    <router-outlet />
   </div>
 </div>
-
-<router-outlet />
