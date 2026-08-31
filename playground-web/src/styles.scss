@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+box-sizing: border-box;
+}
+
+html,
+body {
+min-height: 100%;
+margin: 0;
+background: #070a0f;
+}
+
+body {
+overflow-x: hidden;
+}
+
+button,
+a {
+-webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+color: #111;
+background: #ff9900;
+}
