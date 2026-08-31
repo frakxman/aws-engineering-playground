@@ -1,17 +1,19 @@
 <div class="app-shell">
-  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">λ</div>
-      <div>
-        <div class="brand-name">AWS</div>
-        <div class="brand-subtitle">ENGINEERING PLAYGROUND</div>
+      <div class="brand-mark" aria-hidden="true">
+        AWS
+      </div>
+
+      <div class="brand-copy">
+        <span class="brand-title">AWS</span>
+        <span class="brand-subtitle">Engineering Playground</span>
       </div>
     </div>
 
-    <nav class="navigation">
+    <nav class="sidebar-nav" aria-label="Main navigation">
       <div class="nav-section">
-        <span class="nav-label">EXPLORE</span>
+        <span class="nav-label">PLAYGROUND</span>
 
         <a class="nav-item active" href="#">
           <span class="nav-icon">⌂</span>
@@ -19,18 +21,18 @@
         </a>
 
         <a class="nav-item" href="#">
-          <span class="nav-icon">◈</span>
-          <span>Fundamentals</span>
-        </a>
-
-        <a class="nav-item" href="#">
-          <span class="nav-icon">⌁</span>
-          <span>Architecture</span>
+          <span class="nav-icon">▣</span>
+          <span>Services</span>
         </a>
 
         <a class="nav-item" href="#">
           <span class="nav-icon">◇</span>
-          <span>Services</span>
+          <span>Architecture</span>
+        </a>
+
+        <a class="nav-item" href="#">
+          <span class="nav-icon">&lt;/&gt;</span>
+          <span>Labs</span>
         </a>
       </div>
 
@@ -38,201 +40,160 @@
         <span class="nav-label">ENGINEERING</span>
 
         <a class="nav-item" href="#">
-          <span class="nav-icon">▣</span>
-          <span>Labs</span>
-          <span class="nav-count">08</span>
-        </a>
-
-        <a class="nav-item" href="#">
-          <span class="nav-icon">⌘</span>
+          <span class="nav-icon">◆</span>
           <span>Patterns</span>
         </a>
 
         <a class="nav-item" href="#">
-          <span class="nav-icon">&#123;&#125;</span>
-          <span>Code</span>
+          <span class="nav-icon">↗</span>
+          <span>References</span>
         </a>
       </div>
     </nav>
 
     <div class="sidebar-footer">
-      <div class="status">
-        <span class="status-dot"></span>
-        <span>Playground online</span>
-      </div>
+      <span class="status-dot"></span>
+      <span>AWS Playground</span>
+      <span class="version">v0.1</span>
     </div>
   </aside>
 
-  <!-- Workspace -->
-  <div class="workspace">
+  <div class="app-content">
     <header class="topbar">
       <div class="breadcrumb">
-        <span>AWS</span>
-        <span class="separator">/</span>
-        <span class="current">Engineering Playground</span>
+        <span class="breadcrumb-muted">AWS</span>
+        <span>/</span>
+        <span>Overview</span>
       </div>
 
       <div class="topbar-actions">
-        <button class="icon-button" aria-label="Search">⌕</button>
-        <button class="icon-button" aria-label="Toggle theme">◐</button>
-        <button class="github-button">
-          <span>GitHub</span>
-          <span>↗</span>
+        <button class="topbar-button" type="button">
+          <span>⌘</span>
+          <span>K</span>
+        </button>
+
+        <button class="topbar-button icon-button" type="button" aria-label="Toggle theme">
+          ◐
         </button>
       </div>
     </header>
 
-    <main class="content">
-      <!-- Hero Section -->
+    <main class="workspace">
       <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            <span class="eyebrow-line"></span>
-            AWS ENGINEERING
-          </div>
+        <div>
+          <span class="eyebrow">AWS ENGINEERING</span>
 
           <h1>
-            Build your understanding of
-            <span>cloud systems.</span>
+            Cloud engineering,
+            <span>explored.</span>
           </h1>
 
           <p>
-            A hands-on playground for learning AWS architecture,
-            infrastructure, networking, security and engineering patterns.
+            A practical playground for understanding AWS architecture,
+            services, patterns, and engineering decisions.
+          </p>
+        </div>
+
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          <span>Environment ready</span>
+        </div>
+      </section>
+
+      <section class="glass-grid">
+        <article class="glass-card glass-card-featured">
+          <div class="card-header">
+            <span class="card-kicker">01</span>
+            <span class="card-badge">CORE</span>
+          </div>
+
+          <h2>Services</h2>
+
+          <p>
+            Explore AWS services through focused engineering concepts,
+            examples, and implementation notes.
           </p>
 
-          <div class="hero-actions">
-            <button class="primary-button">
-              Start exploring
-              <span>→</span>
-            </button>
-
-            <button class="secondary-button">
-              View architecture
-            </button>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="orb orb-large"></div>
-          <div class="orb orb-small"></div>
-
-          <div class="architecture-card glass">
-            <div class="architecture-header">
-              <span>ARCHITECTURE</span>
-              <span class="live-badge">LIVE</span>
-            </div>
-
-            <div class="architecture">
-              <div class="node internet">
-                <span class="node-icon">◎</span>
-                <span>Internet</span>
-              </div>
-
-              <div class="connection"></div>
-
-              <div class="node aws">
-                <span class="node-icon">◇</span>
-                <span>VPC</span>
-              </div>
-
-              <div class="connection split"></div>
-
-              <div class="node-row">
-                <div class="node">
-                  <span class="node-icon">▣</span>
-                  <span>EC2</span>
-                </div>
-
-                <div class="node">
-                  <span class="node-icon">◉</span>
-                  <span>RDS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Topics Section -->
-      <section class="section">
-        <div class="section-heading">
-          <div>
-            <span class="section-label">START HERE</span>
-            <h2>Explore AWS engineering</h2>
-          </div>
-
-          <button class="text-button">
-            View all →
+          <button class="card-action" type="button">
+            Explore services
+            <span>→</span>
           </button>
-        </div>
+        </article>
 
-        <div class="card-grid">
-          <article class="topic-card glass">
-            <div class="card-icon orange">◈</div>
-            <div class="card-content">
-              <span class="card-kicker">01 · FOUNDATIONS</span>
-              <h3>Cloud fundamentals</h3>
-              <p>
-                Core concepts behind regions, availability zones,
-                accounts and cloud infrastructure.
-              </p>
-            </div>
-            <span class="card-arrow">↗</span>
-          </article>
-
-          <article class="topic-card glass">
-            <div class="card-icon blue">⌁</div>
-            <div class="card-content">
-              <span class="card-kicker">02 · NETWORKING</span>
-              <h3>Network architecture</h3>
-              <p>
-                Understand VPCs, subnets, routing, gateways and
-                traffic flows.
-              </p>
-            </div>
-            <span class="card-arrow">↗</span>
-          </article>
-
-          <article class="topic-card glass">
-            <div class="card-icon purple">◇</div>
-            <div class="card-content">
-              <span class="card-kicker">03 · COMPUTE</span>
-              <h3>Compute systems</h3>
-              <p>
-                Explore EC2, containers, serverless workloads and
-                scaling strategies.
-              </p>
-            </div>
-            <span class="card-arrow">↗</span>
-          </article>
-        </div>
-      </section>
-
-      <!-- Status / Stats Section -->
-      <section class="section bottom-section">
-        <div class="stats-card glass">
-          <div>
-            <span class="section-label">PLAYGROUND STATUS</span>
-            <h2>Keep building.</h2>
+        <article class="glass-card">
+          <div class="card-header">
+            <span class="card-kicker">02</span>
+            <span class="card-badge">DESIGN</span>
           </div>
 
-          <div class="stats">
-            <div>
-              <strong>08</strong>
-              <span>Labs</span>
-            </div>
-            <div>
-              <strong>12</strong>
-              <span>Topics</span>
-            </div>
-            <div>
-              <strong>24</strong>
-              <span>Patterns</span>
-            </div>
+          <h2>Architecture</h2>
+
+          <p>
+            Understand how cloud components connect through visual
+            architecture diagrams and trade-offs.
+          </p>
+
+          <button class="card-action" type="button">
+            View architectures
+            <span>→</span>
+          </button>
+        </article>
+
+        <article class="glass-card">
+          <div class="card-header">
+            <span class="card-kicker">03</span>
+            <span class="card-badge">HANDS-ON</span>
+          </div>
+
+          <h2>Labs</h2>
+
+          <p>
+            Build small, focused experiments around real AWS engineering
+            problems.
+          </p>
+
+          <button class="card-action" type="button">
+            Open labs
+            <span>→</span>
+          </button>
+        </article>
+      </section>
+
+      <section class="glass-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">SYSTEM</span>
+            <h2>Playground foundation</h2>
+          </div>
+
+          <span class="panel-status">
+            <span class="status-dot"></span>
+            Operational
+          </span>
+        </div>
+
+        <div class="panel-content">
+          <div class="metric">
+            <span class="metric-label">Services</span>
+            <strong>—</strong>
+            <span>Coming soon</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Architectures</span>
+            <strong>—</strong>
+            <span>Coming soon</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Labs</span>
+            <strong>—</strong>
+            <span>Coming soon</span>
           </div>
         </div>
       </section>
     </main>
   </div>
 </div>
+
+<router-outlet />
