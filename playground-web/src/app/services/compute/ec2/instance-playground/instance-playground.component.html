@@ -1,0 +1,133 @@
+<section class="playground">
+
+  <header class="playground-header">
+    <div>
+      <span class="section-label">EC2 PLAYGROUND</span>
+
+      <h2>Build your instance.</h2>
+
+      <p>
+        Configure the compute resources and storage for your workload,
+        then inspect the resulting instance.
+      </p>
+    </div>
+
+    <div class="lab-status">
+      <span></span>
+      INTERACTIVE LAB
+    </div>
+  </header>
+
+  <div class="playground-grid">
+
+    <div class="configuration">
+
+      <section class="config-section">
+        <span class="config-label">01 / INSTANCE FAMILY</span>
+
+        <div class="option-grid">
+          @for (family of instanceFamilies; track family.id) {
+            <button
+              type="button"
+              class="option-card"
+              [class.selected]="selectedFamily === family.id"
+              (click)="selectFamily(family.id)"
+            >
+              <div class="option-top">
+                <strong>{{ family.name }}</strong>
+                <span>{{ family.type }}</span>
+              </div>
+
+              <p>{{ family.description }}</p>
+
+              <div class="option-spec">
+                <span>{{ family.vcpu }} vCPU</span>
+                <span>{{ family.memory }} GiB</span>
+              </div>
+            </button>
+          }
+        </div>
+      </section>
+
+      <section class="config-section">
+        <span class="config-label">02 / INSTANCE SIZE</span>
+
+        <div class="size-grid">
+          @for (size of sizes; track size.id) {
+            <button
+              type="button"
+              class="size-option"
+              [class.selected]="selectedSize === size.id"
+              (click)="selectSize(size.id)"
+            >
+              {{ size.name }}
+            </button>
+          }
+        </div>
+      </section>
+
+      <section class="config-section">
+        <span class="config-label">03 / STORAGE</span>
+
+        <div class="storage-options">
+          @for (storage of storageOptions; track storage.id) {
+            <button
+              type="button"
+              class="storage-option"
+              [class.selected]="selectedStorage === storage.id"
+              (click)="selectStorage(storage.id)"
+            >
+              <strong>{{ storage.name }}</strong>
+              <span>{{ storage.description }}</span>
+            </button>
+          }
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="instance-preview">
+
+      <span class="preview-label">YOUR INSTANCE</span>
+
+      <div class="instance-visual">
+        <div class="instance-core">
+          <span>EC2</span>
+        </div>
+      </div>
+
+      <h3>{{ instanceName }}</h3>
+
+      <p>
+        {{ selectedFamilyData.type | titlecase }}
+      </p>
+
+      <div class="spec-list">
+
+        <div>
+          <span>CPU</span>
+          <strong>{{ vcpu }} vCPU</strong>
+        </div>
+
+        <div>
+          <span>MEMORY</span>
+          <strong>{{ memory }} GiB</strong>
+        </div>
+
+        <div>
+          <span>STORAGE</span>
+          <strong>{{ selectedStorage === 'ebs' ? 'EBS' : 'Instance Store' }}</strong>
+        </div>
+
+      </div>
+
+      <button class="launch-button" type="button">
+        Launch instance
+        <span>→</span>
+      </button>
+
+    </aside>
+
+  </div>
+
+</section>

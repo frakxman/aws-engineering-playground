@@ -1,165 +1,168 @@
-<section class="compute-page">
-  <a class="back-link" routerLink="/services">
-    <span>←</span>
-    Back to services
-  </a>
+@if (!isEc2Route) {
+  <section class="compute-page">
+    <a class="back-link" routerLink="/services">
+      <span>←</span>
+      Back to services
+    </a>
 
-  <header class="compute-hero">
-    <div>
-      <span class="eyebrow">AWS COMPUTE</span>
-
-      <h1>
-        Compute,
-        <span>explored.</span>
-      </h1>
-
-      <p>
-        Understand the AWS services used to run applications and workloads,
-        from virtual machines to containers and serverless compute.
-      </p>
-    </div>
-
-    <div class="hero-badge">
-      <span class="status-dot"></span>
-      <span>Compute ready</span>
-    </div>
-  </header>
-
-  <section class="compute-grid">
-    <article class="compute-card compute-card-featured">
-      <div class="compute-card-header">
-        <span class="card-kicker">01</span>
-        <span class="card-badge">VIRTUAL MACHINES</span>
-      </div>
-
-      <h2>Amazon EC2</h2>
-
-      <p>
-        Run workloads on virtual machines with control over compute capacity,
-        networking, storage, and operating systems.
-      </p>
-
-      <button class="card-action" type="button">
-        Explore EC2
-        <span>→</span>
-      </button>
-    </article>
-
-    <article class="compute-card">
-      <div class="compute-card-header">
-        <span class="card-kicker">02</span>
-        <span class="card-badge">SERVERLESS</span>
-      </div>
-
-      <h2>AWS Lambda</h2>
-
-      <p>
-        Execute code without managing servers and scale automatically based
-        on incoming events and workload demand.
-      </p>
-
-      <button class="card-action" type="button">
-        Explore Lambda
-        <span>→</span>
-      </button>
-    </article>
-
-    <article class="compute-card">
-      <div class="compute-card-header">
-        <span class="card-kicker">03</span>
-        <span class="card-badge">CONTAINERS</span>
-      </div>
-
-      <h2>Amazon ECS</h2>
-
-      <p>
-        Run and orchestrate containerized applications using a managed
-        container platform integrated with AWS infrastructure.
-      </p>
-
-      <button class="card-action" type="button">
-        Explore ECS
-        <span>→</span>
-      </button>
-    </article>
-
-    <article class="compute-card">
-      <div class="compute-card-header">
-        <span class="card-kicker">04</span>
-        <span class="card-badge">KUBERNETES</span>
-      </div>
-
-      <h2>Amazon EKS</h2>
-
-      <p>
-        Operate Kubernetes workloads on AWS while using managed control-plane
-        capabilities and the broader AWS ecosystem.
-      </p>
-
-      <button class="card-action" type="button">
-        Explore EKS
-        <span>→</span>
-      </button>
-    </article>
-
-    <article class="compute-card">
-      <div class="compute-card-header">
-        <span class="card-kicker">05</span>
-        <span class="card-badge">SERVERLESS CONTAINERS</span>
-      </div>
-
-      <h2>AWS Fargate</h2>
-
-      <p>
-        Run containers without provisioning or managing the underlying
-        servers, while integrating with ECS or EKS.
-      </p>
-
-      <button class="card-action" type="button">
-        Explore Fargate
-        <span>→</span>
-      </button>
-    </article>
-  </section>
-
-  <section class="compute-panel">
-    <div class="panel-heading">
+    <header class="compute-hero">
       <div>
-        <span class="eyebrow">ENGINEERING DECISION</span>
+        <span class="eyebrow">AWS COMPUTE</span>
 
-        <h2>Choose the right compute model</h2>
-      </div>
-    </div>
+        <h1>
+          Compute,
+          <span>explored.</span>
+        </h1>
 
-    <div class="panel-content">
-      <div class="decision">
-        <span class="decision-label">CONTROL</span>
-        <strong>EC2</strong>
-        <span>
-          Maximum infrastructure control and flexibility.
-        </span>
+        <p>
+          Understand the AWS services used to run applications and workloads,
+          from virtual machines to containers and serverless compute.
+        </p>
       </div>
 
-      <div class="decision">
-        <span class="decision-label">SIMPLICITY</span>
-        <strong>Lambda</strong>
-        <span>
-          Focus on application code without managing servers.
-        </span>
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        <span>Compute ready</span>
+      </div>
+    </header>
+
+    <section class="compute-grid">
+      <article class="compute-card compute-card-featured">
+        <div class="compute-card-header">
+          <span class="card-kicker">01</span>
+          <span class="card-badge">VIRTUAL MACHINES</span>
+        </div>
+
+        <h2>Amazon EC2</h2>
+
+        <p>
+          Run workloads on virtual machines with control over compute capacity,
+          networking, storage, and operating systems.
+        </p>
+
+        <button class="card-action" type="button" routerLink="/services/compute/ec2">
+          Explore EC2
+          <span>→</span>
+        </button>
+      </article>
+
+      <article class="compute-card">
+        <div class="compute-card-header">
+          <span class="card-kicker">02</span>
+          <span class="card-badge">SERVERLESS</span>
+        </div>
+
+        <h2>AWS Lambda</h2>
+
+        <p>
+          Execute code without managing servers and scale automatically based
+          on incoming events and workload demand.
+        </p>
+
+        <button class="card-action" type="button">
+          Explore Lambda
+          <span>→</span>
+        </button>
+      </article>
+
+      <article class="compute-card">
+        <div class="compute-card-header">
+          <span class="card-kicker">03</span>
+          <span class="card-badge">CONTAINERS</span>
+        </div>
+
+        <h2>Amazon ECS</h2>
+
+        <p>
+          Run and orchestrate containerized applications using a managed
+          container platform integrated with AWS infrastructure.
+        </p>
+
+        <button class="card-action" type="button">
+          Explore ECS
+          <span>→</span>
+        </button>
+      </article>
+
+      <article class="compute-card">
+        <div class="compute-card-header">
+          <span class="card-kicker">04</span>
+          <span class="card-badge">KUBERNETES</span>
+        </div>
+
+        <h2>Amazon EKS</h2>
+
+        <p>
+          Operate Kubernetes workloads on AWS while using managed control-plane
+          capabilities and the broader AWS ecosystem.
+        </p>
+
+        <button class="card-action" type="button">
+          Explore EKS
+          <span>→</span>
+        </button>
+      </article>
+
+      <article class="compute-card">
+        <div class="compute-card-header">
+          <span class="card-kicker">05</span>
+          <span class="card-badge">SERVERLESS CONTAINERS</span>
+        </div>
+
+        <h2>AWS Fargate</h2>
+
+        <p>
+          Run containers without provisioning or managing the underlying
+          servers, while integrating with ECS or EKS.
+        </p>
+
+        <button class="card-action" type="button">
+          Explore Fargate
+          <span>→</span>
+        </button>
+      </article>
+    </section>
+
+    <section class="compute-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">ENGINEERING DECISION</span>
+
+          <h2>Choose the right compute model</h2>
+        </div>
       </div>
 
-      <div class="decision">
-        <span class="decision-label">CONTAINERS</span>
-        <strong>ECS / EKS</strong>
-        <span>
-          Choose based on orchestration requirements and platform needs.
-        </span>
+      <div class="panel-content">
+        <div class="decision">
+          <span class="decision-label">CONTROL</span>
+          <strong>EC2</strong>
+          <span>
+            Maximum infrastructure control and flexibility.
+          </span>
+        </div>
+
+        <div class="decision">
+          <span class="decision-label">SIMPLICITY</span>
+          <strong>Lambda</strong>
+          <span>
+            Focus on application code without managing servers.
+          </span>
+        </div>
+
+        <div class="decision">
+          <span class="decision-label">CONTAINERS</span>
+          <strong>ECS / EKS</strong>
+          <span>
+            Choose based on orchestration requirements and platform needs.
+          </span>
+        </div>
       </div>
-    </div>
+    </section>
   </section>
-</section>
+}
 
-<section class="compute-page">
-  <router-outlet />
-</section>
+<router-outlet />
+
+
+
 

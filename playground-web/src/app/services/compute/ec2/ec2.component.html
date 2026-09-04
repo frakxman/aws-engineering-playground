@@ -1,1 +1,272 @@
-<p>ec2 works!</p>
+<section class="ec2-page">
+
+  <a class="back-link" routerLink="/services/compute">
+    <span>←</span>
+    Back to compute
+  </a>
+
+  <header class="ec2-hero">
+    <div class="eyebrow">AWS COMPUTE / EC2</div>
+
+    <h1>
+      Amazon EC2
+      <span>Virtual machines, engineered.</span>
+    </h1>
+
+    <p>
+      Launch and manage virtual servers in the AWS Cloud with control over
+      compute capacity, networking, storage, operating systems, and security.
+    </p>
+
+    <div class="status">EC2 ready</div>
+  </header>
+
+  <section class="ec2-concepts">
+
+    <article class="concept-card">
+      <span class="concept-number">01</span>
+      <div>
+        <span class="concept-label">COMPUTE</span>
+        <h2>Instance Types</h2>
+        <p>
+          Choose CPU, memory, networking, and storage characteristics based
+          on the workload requirements.
+        </p>
+      </div>
+    </article>
+
+    <article class="concept-card">
+      <span class="concept-number">02</span>
+      <div>
+        <span class="concept-label">IMAGE</span>
+        <h2>AMI</h2>
+        <p>
+          Define the operating system and software configuration used to
+          launch an EC2 instance.
+        </p>
+      </div>
+    </article>
+
+    <article class="concept-card">
+      <span class="concept-number">03</span>
+      <div>
+        <span class="concept-label">STORAGE</span>
+        <h2>EBS</h2>
+        <p>
+          Attach persistent block storage for operating systems, applications,
+          and data that must survive an instance stop.
+        </p>
+      </div>
+    </article>
+
+    <article class="concept-card">
+      <span class="concept-number">04</span>
+      <div>
+        <span class="concept-label">NETWORKING</span>
+        <h2>VPC</h2>
+        <p>
+          Place instances inside subnets and control traffic using route
+          tables, internet gateways, and security groups.
+        </p>
+      </div>
+    </article>
+
+    <article class="concept-card">
+      <span class="concept-number">05</span>
+      <div>
+        <span class="concept-label">ACCESS</span>
+        <h2>IAM & Security</h2>
+        <p>
+          Control instance permissions and network access using IAM roles
+          and security groups.
+        </p>
+      </div>
+    </article>
+
+  </section>
+
+  <app-instance-playground />
+
+  <section class="instance-types">
+
+    <div class="section-label">INSTANCE TYPES</div>
+
+    <h2>Choose compute for the workload.</h2>
+
+    <p class="section-intro">
+      EC2 instance types define the balance of CPU, memory, networking, and
+      other resources available to an instance. The right choice depends on
+      what the workload actually needs.
+    </p>
+
+    <div class="instance-type-grid">
+
+      <article>
+        <span class="type-code">GENERAL PURPOSE</span>
+        <h3>T3</h3>
+        <p>
+          A balanced option for workloads with moderate and variable CPU usage,
+          such as web applications and development environments.
+        </p>
+      </article>
+
+      <article>
+        <span class="type-code">COMPUTE OPTIMIZED</span>
+        <h3>C5</h3>
+        <p>
+          Designed for compute-intensive workloads that benefit from higher
+          CPU performance relative to memory.
+        </p>
+      </article>
+
+      <article>
+        <span class="type-code">MEMORY OPTIMIZED</span>
+        <h3>R5</h3>
+        <p>
+          Provides more memory for workloads such as large in-memory datasets,
+          caching, and memory-intensive applications.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="instance-naming">
+      <span class="section-label">NAMING</span>
+
+      <code>c5.4xlarge</code>
+
+      <p>
+        <strong>c5</strong> identifies the instance family and generation,
+        while <strong>4xlarge</strong> identifies the instance size.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="ec2-storage">
+
+    <div class="section-label">INSTANCE STORAGE</div>
+
+    <h2>Persistent or temporary?</h2>
+
+    <p class="section-intro">
+      EC2 instances can use different storage options depending on whether
+      application data needs to persist beyond the lifetime of the instance.
+    </p>
+
+    <div class="storage-grid">
+
+      <article class="storage-card">
+        <span class="storage-type">PERSISTENT BLOCK STORAGE</span>
+
+        <h3>EBS</h3>
+
+        <p>
+          Amazon EBS provides persistent block storage that can remain available
+          when an instance is stopped. It is commonly used for operating systems,
+          applications, and data that must survive an instance restart.
+        </p>
+
+        <div class="storage-decision">
+          <span>USE WHEN</span>
+          <strong>Data must persist</strong>
+        </div>
+      </article>
+
+      <article class="storage-card">
+        <span class="storage-type">TEMPORARY INSTANCE STORAGE</span>
+
+        <h3>Instance Store</h3>
+
+        <p>
+          Instance Store provides high-speed temporary storage physically
+          associated with the host. Data is lost when the instance is stopped
+          or terminated.
+        </p>
+
+        <div class="storage-decision">
+          <span>USE WHEN</span>
+          <strong>Speed matters more than persistence</strong>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="engineering-decision">
+
+    <div class="section-label">ENGINEERING DECISION</div>
+
+    <h2>When does EC2 make sense?</h2>
+
+    <div class="decision-grid">
+
+      <div>
+        <span>CONTROL</span>
+        <p>
+          When you need control over the operating system, instance
+          configuration, networking, or installed software.
+        </p>
+      </div>
+
+      <div>
+        <span>CONSISTENCY</span>
+        <p>
+          When an application requires a long-running, dedicated compute
+          environment.
+        </p>
+      </div>
+
+      <div>
+        <span>FLEXIBILITY</span>
+        <p>
+          When the workload does not fit naturally into serverless or
+          container-based compute models.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="ec2-lifecycle">
+    <div class="section-label">INSTANCE LIFECYCLE</div>
+    <h2>From launch to termination.</h2>
+    <div class="lifecycle-grid">
+      <article>
+        <span>01</span>
+        <h3>Pending</h3>
+        <p>
+          AWS is preparing the instance. The instance is being launched and
+          configured before it becomes available.
+        </p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Running</h3>
+        <p>
+          The instance is active and available for workloads. This is the
+          primary state where compute charges accumulate.
+        </p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Stopped</h3>
+        <p>
+          The instance is shut down but its EBS volumes can remain available
+          for a later restart. Compute charges stop while it is stopped.
+        </p>
+      </article>
+      <article>
+        <span>04</span>
+        <h3>Terminated</h3>
+        <p>
+          The instance has been permanently deleted and cannot be restarted.
+          Associated resources may have separate lifecycle rules.
+        </p>
+      </article>
+    </div>
+  </section>
+
+</section>
