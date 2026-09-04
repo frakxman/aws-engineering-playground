@@ -18,42 +18,108 @@
     </div>
   </header>
 
+
   <div class="playground-grid">
+
+    <!-- Configuration -->
 
     <div class="configuration">
 
+      <!-- Instance family -->
+
       <section class="config-section">
-        <span class="config-label">01 / INSTANCE FAMILY</span>
+
+        <span class="config-label">
+          01 / INSTANCE FAMILY
+        </span>
 
         <div class="option-grid">
+
           @for (family of instanceFamilies; track family.id) {
+
             <button
               type="button"
               class="option-card"
               [class.selected]="selectedFamily === family.id"
               (click)="selectFamily(family.id)"
             >
+
               <div class="option-top">
-                <strong>{{ family.name }}</strong>
-                <span>{{ family.type }}</span>
+
+                <strong>
+                  {{ family.name }}
+                </strong>
+
+                <span>
+                  {{ family.type }}
+                </span>
+
               </div>
 
-              <p>{{ family.description }}</p>
+              <p>
+                {{ family.description }}
+              </p>
 
               <div class="option-spec">
-                <span>{{ family.vcpu }} vCPU</span>
-                <span>{{ family.memory }} GiB</span>
+
+                <span>
+                  {{ family.vcpu }} vCPU
+                </span>
+
+                <span>
+                  {{ family.memory }} GiB
+                </span>
+
               </div>
+
             </button>
+
           }
+
         </div>
+
+
+        <!-- Family explanation -->
+
+        <div class="decision-note">
+
+          <span class="decision-icon">
+            →
+          </span>
+
+          <div>
+
+            <span class="decision-label">
+              ENGINEERING DECISION
+            </span>
+
+            <strong>
+              {{ selectedFamilyData.type | titlecase }}
+            </strong>
+
+            <p>
+              {{ familyDecision }}
+            </p>
+
+          </div>
+
+        </div>
+
       </section>
 
+
+      <!-- Instance size -->
+
       <section class="config-section">
-        <span class="config-label">02 / INSTANCE SIZE</span>
+
+        <span class="config-label">
+          02 / INSTANCE SIZE
+        </span>
 
         <div class="size-grid">
+
           @for (size of sizes; track size.id) {
+
             <button
               type="button"
               class="size-option"
@@ -62,68 +128,163 @@
             >
               {{ size.name }}
             </button>
+
           }
+
         </div>
+
+
+        <!-- Size explanation -->
+
+        <div class="decision-note compact">
+
+          <span class="decision-icon">
+            →
+          </span>
+
+          <div>
+
+            <span class="decision-label">
+              RESOURCE SCALING
+            </span>
+
+            <p>
+              {{ sizeDecision }}
+            </p>
+
+          </div>
+
+        </div>
+
       </section>
 
+
+      <!-- Storage -->
+
       <section class="config-section">
-        <span class="config-label">03 / STORAGE</span>
+
+        <span class="config-label">
+          03 / STORAGE
+        </span>
 
         <div class="storage-options">
+
           @for (storage of storageOptions; track storage.id) {
+
             <button
               type="button"
               class="storage-option"
               [class.selected]="selectedStorage === storage.id"
               (click)="selectStorage(storage.id)"
             >
-              <strong>{{ storage.name }}</strong>
-              <span>{{ storage.description }}</span>
+
+              <strong>
+                {{ storage.name }}
+              </strong>
+
+              <span>
+                {{ storage.description }}
+              </span>
+
             </button>
+
           }
+
         </div>
+
+
+        <!-- Storage explanation -->
+
+        <div class="decision-note compact">
+
+          <span class="decision-icon">
+            →
+          </span>
+
+          <div>
+
+            <span class="decision-label">
+              STORAGE BEHAVIOR
+            </span>
+
+            <p>
+              {{ storageDecision }}
+            </p>
+
+          </div>
+
+        </div>
+
       </section>
 
     </div>
 
+
+    <!-- Instance preview -->
+
     <aside class="instance-preview">
 
-      <span class="preview-label">YOUR INSTANCE</span>
+      <span class="preview-label">
+        YOUR INSTANCE
+      </span>
+
 
       <div class="instance-visual">
+
         <div class="instance-core">
           <span>EC2</span>
         </div>
+
       </div>
 
-      <h3>{{ instanceName }}</h3>
+
+      <h3>
+        {{ instanceName }}
+      </h3>
 
       <p>
         {{ selectedFamilyData.type | titlecase }}
       </p>
 
+
       <div class="spec-list">
 
         <div>
           <span>CPU</span>
-          <strong>{{ vcpu }} vCPU</strong>
+
+          <strong>
+            {{ vcpu }} vCPU
+          </strong>
         </div>
 
         <div>
           <span>MEMORY</span>
-          <strong>{{ memory }} GiB</strong>
+
+          <strong>
+            {{ memory }} GiB
+          </strong>
         </div>
 
         <div>
           <span>STORAGE</span>
-          <strong>{{ selectedStorage === 'ebs' ? 'EBS' : 'Instance Store' }}</strong>
+
+          <strong>
+            {{ selectedStorage === 'ebs' ? 'EBS' : 'Instance Store' }}
+          </strong>
         </div>
 
       </div>
 
-      <button class="launch-button" type="button">
+
+      <button
+        class="launch-button"
+        type="button"
+      >
         Launch instance
-        <span>→</span>
+
+        <span>
+          →
+        </span>
       </button>
 
     </aside>

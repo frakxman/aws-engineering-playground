@@ -113,4 +113,41 @@ export class InstancePlaygroundComponent {
   get instanceName(): string {
     return `${this.selectedFamily}.${this.selectedSize}`;
   }
+
+  get familyDecision(): string {
+    switch (this.selectedFamily) {
+      case 'c5':
+        return 'Compute optimized → prioritizes CPU performance for workloads that are primarily compute bound.';
+
+      case 'r5':
+        return 'Memory optimized → provides significantly more memory per vCPU for in-memory databases, caches, and analytics.';
+
+      default:
+        return 'General purpose → balances compute, memory, and network resources for a broad range of workloads.';
+    }
+  }
+
+  get sizeDecision(): string {
+    switch (this.selectedSize) {
+      case 'small':
+        return 'Small → baseline resources for lightweight workloads and development environments.';
+
+      case 'large':
+        return 'Large → scales the baseline configuration to provide more CPU and memory for heavier workloads.';
+
+      case 'xlarge':
+        return 'XLarge → significantly increases CPU and memory capacity for demanding workloads.';
+
+      default:
+        return 'Medium → doubles the baseline CPU and memory configuration for a balanced workload.';
+    }
+  }
+
+  get storageDecision(): string {
+    if (this.selectedStorage === 'instance-store') {
+      return 'Instance Store → local storage with very low latency, but data is temporary and tied to the instance lifecycle.';
+    }
+
+    return 'EBS → persistent block storage that remains independent from the compute lifecycle.';
+  }
 }

@@ -21,6 +21,11 @@
   -webkit-backdrop-filter: blur(22px);
 }
 
+
+/* --------------------------------
+   Header
+--------------------------------- */
+
 .playground-header {
   display: flex;
   align-items: flex-end;
@@ -75,7 +80,9 @@
   padding: 7px 10px;
 
   color: var(--text-muted);
+
   background: rgba(255, 255, 255, 0.025);
+
   border: 1px solid var(--glass-border);
   border-radius: 6px;
 
@@ -94,9 +101,17 @@
   box-shadow: 0 0 10px rgba(72, 213, 151, 0.5);
 }
 
+
+/* --------------------------------
+   Playground layout
+--------------------------------- */
+
 .playground-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+  grid-template-columns:
+    minmax(0, 1.6fr)
+    minmax(280px, 0.8fr);
+
   gap: 1px;
 
   margin-top: 28px;
@@ -107,6 +122,7 @@
 .configuration {
   display: flex;
   flex-direction: column;
+
   gap: 1px;
 }
 
@@ -124,32 +140,36 @@
   color: var(--text-dim);
 }
 
+
+/* --------------------------------
+   Instance family
+--------------------------------- */
+
 .option-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 10px;
 }
 
-.option-card,
-.size-option,
-.storage-option {
+.option-card {
   appearance: none;
+
+  min-height: 168px;
+  padding: 18px;
+
+  color: var(--text-primary);
+
+  background: rgba(255, 255, 255, 0.018);
+
+  border: 1px solid var(--glass-border);
+  border-radius: 9px;
 
   font: inherit;
   text-align: left;
 
   cursor: pointer;
-}
-
-.option-card {
-  min-height: 168px;
-  padding: 18px;
-
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.018);
-
-  border: 1px solid var(--glass-border);
-  border-radius: 9px;
 
   transition:
     border-color 160ms ease,
@@ -159,7 +179,9 @@
 
 .option-card:hover {
   background: rgba(255, 255, 255, 0.035);
+
   border-color: var(--glass-border-strong);
+
   transform: translateY(-2px);
 }
 
@@ -172,7 +194,9 @@
     );
 
   border-color: rgba(255, 153, 0, 0.55);
-  box-shadow: inset 0 0 0 1px rgba(255, 153, 0, 0.08);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 153, 0, 0.08);
 }
 
 .option-top {
@@ -222,16 +246,26 @@
   font-size: 8px;
 }
 
+
+/* --------------------------------
+   Instance size
+--------------------------------- */
+
 .size-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
+
   gap: 8px;
 }
 
 .size-option {
+  appearance: none;
+
   padding: 13px 10px;
 
   color: var(--text-dim);
+
   background: rgba(255, 255, 255, 0.018);
 
   border: 1px solid var(--glass-border);
@@ -239,7 +273,10 @@
 
   font-family: var(--font-mono);
   font-size: 9px;
+
   text-align: center;
+
+  cursor: pointer;
 
   transition:
     color 160ms ease,
@@ -249,6 +286,7 @@
 
 .size-option:hover {
   color: var(--text-primary);
+
   background: rgba(255, 255, 255, 0.035);
 }
 
@@ -256,12 +294,20 @@
   color: var(--aws-orange);
 
   background: rgba(255, 153, 0, 0.07);
+
   border-color: rgba(255, 153, 0, 0.45);
 }
 
+
+/* --------------------------------
+   Storage
+--------------------------------- */
+
 .storage-options {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 1fr);
+
   gap: 10px;
 }
 
@@ -270,13 +316,21 @@
   flex-direction: column;
   gap: 7px;
 
+  appearance: none;
+
   padding: 16px;
 
   color: var(--text-primary);
+
   background: rgba(255, 255, 255, 0.018);
 
   border: 1px solid var(--glass-border);
   border-radius: 8px;
+
+  font: inherit;
+  text-align: left;
+
+  cursor: pointer;
 
   transition:
     border-color 160ms ease,
@@ -289,6 +343,7 @@
 
 .storage-option.selected {
   background: rgba(255, 153, 0, 0.065);
+
   border-color: rgba(255, 153, 0, 0.45);
 }
 
@@ -304,6 +359,89 @@
   font-family: var(--font-body);
   font-size: 9px;
 }
+
+
+/* --------------------------------
+   Engineering decisions
+--------------------------------- */
+
+.decision-note {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+
+  gap: 12px;
+
+  margin-top: 16px;
+  padding: 14px 16px;
+
+  background: rgba(255, 153, 0, 0.035);
+
+  border: 1px solid rgba(255, 153, 0, 0.12);
+  border-radius: 7px;
+}
+
+.decision-note.compact {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.decision-icon {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--aws-orange);
+
+  background: rgba(255, 153, 0, 0.07);
+
+  border: 1px solid rgba(255, 153, 0, 0.16);
+  border-radius: 5px;
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.decision-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--aws-orange);
+
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+.decision-note strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.decision-note p {
+  max-width: 620px;
+
+  margin: 6px 0 0;
+
+  color: var(--text-dim);
+
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+
+/* --------------------------------
+   Instance preview
+--------------------------------- */
 
 .instance-preview {
   display: flex;
@@ -325,6 +463,11 @@
 .preview-label {
   color: var(--text-dim);
 }
+
+
+/* --------------------------------
+   Instance visual
+--------------------------------- */
 
 .instance-visual {
   display: grid;
@@ -381,6 +524,11 @@
   letter-spacing: 0.08em;
 }
 
+
+/* --------------------------------
+   Specifications
+--------------------------------- */
+
 .spec-list {
   display: flex;
   flex-direction: column;
@@ -416,6 +564,11 @@
   font-weight: 500;
 }
 
+
+/* --------------------------------
+   Launch
+--------------------------------- */
+
 .launch-button {
   display: flex;
   align-items: center;
@@ -429,6 +582,7 @@
   color: #111;
 
   background: var(--aws-orange);
+
   border: 1px solid var(--aws-orange);
   border-radius: 6px;
 
@@ -448,7 +602,8 @@
 .launch-button:hover {
   background: #ffad2f;
 
-  box-shadow: 0 8px 25px rgba(255, 153, 0, 0.18);
+  box-shadow:
+    0 8px 25px rgba(255, 153, 0, 0.18);
 
   transform: translateY(-1px);
 }
@@ -456,6 +611,11 @@
 .launch-button span {
   font-size: 14px;
 }
+
+
+/* --------------------------------
+   Responsive
+--------------------------------- */
 
 @media (max-width: 900px) {
   .playground-grid {
@@ -484,6 +644,10 @@
   .storage-options,
   .size-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .decision-note {
+    grid-template-columns: 1fr;
   }
 }
 
